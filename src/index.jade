@@ -9,13 +9,16 @@ html(lang="ja")
     .app-container
       .app-navigation
         ul
-          li トップ
-          li 店舗一覧
-          li ジャンル一覧
+          li
+            a(href="/") トップ
+          li
+            a(href="/shops")店舗一覧
+          li
+            a(href="/genres")ジャンル一覧
       .app-header
         .main-visual
           .main-visual-image-container
-            img(src="./images/main_visual.jpg")
+            img(src="/images/main_visual.jpg")
           .main-visual-text-box
             h1 酒蔵 山口
             p すばらしき日本酒の旅を
@@ -24,18 +27,19 @@ html(lang="ja")
           - for (let index = 0; index < 30; index++) {
             li.card-container
               .card
-                .card-header
-                  img(src="http://getnavi.jp/wps/wp-content/uploads/2016/05/20160515-%EF%BD%936-0.jpg")
-                .card-content
-                  .card-content-product-name 商品名
-                  .card-content-product-description
-                    | 商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。
-                  .card-content-product-price
-                    | 10,000
-                    .card-content-product-price-unit
-                      | 円
+                a.card-link(href="/show.html")
+                  .card-header
+                    img(src="http://getnavi.jp/wps/wp-content/uploads/2016/05/20160515-%EF%BD%936-0.jpg")
+                  .card-content
+                    .card-content-product-name 商品名
+                    .card-content-product-description
+                      | 商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。
+                    .card-content-product-price
+                      | 10,000
+                      .card-content-product-price-unit
+                        | 円
                 .card-footer
-                  .card-footer-rakuten-link
+                  a.card-footer-rakuten-link(href="http://www.rakuten.co.jp/")
                     | 楽天で購入
           - }
         .pagination-container

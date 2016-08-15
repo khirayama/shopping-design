@@ -18,6 +18,7 @@ body
   font-family: sans-serif
   width: 100%
   color: #212121
+  background-color: #fafafa
 
 ul
   list-style: none
@@ -42,14 +43,19 @@ img
       flex: 1
       height: 44px
       line-height: 44px
+      color: #aaa
       text-align: center
       cursor: pointer
       background-color: #fff
-      transition: opacity .2s ease-out
+      transition: color .2s ease-out
+      a
+        display: block
+        text-decoration: none
+        color: inherit
       & + li
         border-left: solid 1px #ccc
       &:hover
-        opacity: .3
+        color: #212121
 
 .app-header
   padding-bottom: 32px
@@ -113,31 +119,35 @@ img
   &:hover
     box-shadow: 0 4px 4px rgba(0, 0, 0, .3)
     opacity: .8
-  .card-header
-    height: 160px
-    overflow: hidden
-    img
-      width: 100%
-  .card-content
-    padding: 16px 8px 12px
-    .card-content-product-name
-      font-weight: bold
-      font-size: 1.4rem
-      margin-bottom: 12px
-    .card-content-product-description
-      height: 4rem
+  .card-link
+    display: block
+    text-decoration: none
+    color: inherit
+    .card-header
+      height: 160px
       overflow: hidden
-      margin-bottom: 12px
-      color: #9e9e9e
-    .card-content-product-price
-      text-align: right
-      font-size: 1.2rem
-      font-weight: bold
-      .card-content-product-price-unit
-        display: inline
-        font-size: .8rem
-        font-weight: normal
-        padding-left: 3px
+      img
+        width: 100%
+    .card-content
+      padding: 16px 8px 12px
+      .card-content-product-name
+        font-weight: bold
+        font-size: 1.4rem
+        margin-bottom: 12px
+      .card-content-product-description
+        height: 4rem
+        overflow: hidden
+        margin-bottom: 12px
+        color: #9e9e9e
+      .card-content-product-price
+        text-align: right
+        font-size: 1.2rem
+        font-weight: bold
+        .card-content-product-price-unit
+          display: inline
+          font-size: .8rem
+          font-weight: normal
+          padding-left: 3px
   .card-footer
     position: absolute
     bottom: 0
@@ -145,6 +155,8 @@ img
     width: 100%
     border-top: solid 1px #ccc
     .card-footer-rakuten-link
+      display: block
+      text-decoration: none
       height: 44px
       line-height: 44px
       text-align: center
@@ -179,3 +191,64 @@ img
 .app-footer
   padding: 0 24px
   color: #9e9e9e
+
+
+// show
+.product-card-container
+  width: 100%
+
+.product-card
+  $width-max: 880px
+  position: relative
+  width: 100%
+  cursor: pointer
+  background-color: #fff
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3)
+  opacity: 1
+  transition: box-shadow .1s ease-out, opacity .2s ease-out
+  .product-card-header
+    max-height: 480px
+    overflow: hidden
+    text-align: center
+    background-color: #ccc
+    img
+      width: auto
+      max-height: 100%
+  .product-card-content
+    max-width: $width-max
+    padding: 16px 8px 12px
+    margin: 0 auto
+    .product-card-content-product-name
+      font-weight: bold
+      font-size: 1.4rem
+      margin-bottom: 12px
+    .product-card-content-product-description
+      margin-bottom: 12px
+      color: #9e9e9e
+    .product-card-content-product-price
+      text-align: right
+      font-size: 1.2rem
+      font-weight: bold
+      .product-card-content-product-price-unit
+        display: inline
+        font-size: .8rem
+        font-weight: normal
+        padding-left: 3px
+  .product-card-footer
+    width: 100%
+    padding: 24px 0
+    .product-card-footer-rakuten-link
+      display: block
+      text-decoration: none
+      max-width: $width-max
+      height: 44px
+      line-height: 44px
+      margin: 0 auto
+      text-align: center
+      color: #fff
+      background-color: rgb(191, 0, 0)
+      transition: opacity .2s ease-out
+      opacity: 1
+      border-radius: 3px
+      &:hover
+        opacity: .3
