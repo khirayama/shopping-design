@@ -17,6 +17,7 @@ html,
 body
   font-family: sans-serif
   width: 100%
+  color: #212121
 
 ul
   list-style: none
@@ -31,22 +32,150 @@ img
 .app-container
   width: 100%
   margin: 0 auto
+  background-color: #fafafa
+
+.app-navigation
+  ul
+    display: flex
+    width: 100%
+    li
+      flex: 1
+      height: 44px
+      line-height: 44px
+      text-align: center
+      cursor: pointer
+      background-color: #fff
+      transition: opacity .2s ease-out
+      & + li
+        border-left: solid 1px #ccc
+      &:hover
+        opacity: .3
+
+.app-header
+  padding-bottom: 32px
 
 .main-visual
+  position: relative
   width: 100%
-  height: 320px
-  background-color: yellow
+  .main-visual-image-container
+    position: relative
+    width: 100%
+    max-height: 420px
+    overflow: hidden
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: #212121
+      opacity: .3
+    img
+      width: 100%
+      height: auto
+  .main-visual-text-box
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: inline-block
+    min-width: 300px
+    text-align: center
+    color: #fff
+    font-family: serif
+    text-shadow: 0 1px 3px #212121
+    h1
+      font-family: serif
+      font-size: 4rem
+      border-bottom: solid 1px #fff
 
 .cards-container
-  display: inline-block
-
-.cards
   display: flex
   flex-direction: row
   flex-wrap: wrap
-  background: red
-  .card
+  padding: 0 16px
+  .card-container
     flex: 1
-    background-color: blue
-    min-width: 180px
-    height: 300px
+    min-width: 240px
+    height: 400px
+    padding: 12px
+
+.card
+  position: relative
+  width: 100%
+  height: 100%
+  cursor: pointer
+  background-color: #fff
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3)
+  opacity: 1
+  transition: box-shadow .1s ease-out, opacity .2s ease-out
+  &:hover
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .3)
+    opacity: .8
+  .card-header
+    height: 160px
+    overflow: hidden
+    img
+      width: 100%
+  .card-content
+    padding: 16px 8px 12px
+    .card-content-product-name
+      font-weight: bold
+      font-size: 1.4rem
+      margin-bottom: 12px
+    .card-content-product-description
+      height: 4rem
+      overflow: hidden
+      margin-bottom: 12px
+      color: #9e9e9e
+    .card-content-product-price
+      text-align: right
+      font-size: 1.2rem
+      font-weight: bold
+      .card-content-product-price-unit
+        display: inline
+        font-size: .8rem
+        font-weight: normal
+        padding-left: 3px
+  .card-footer
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    border-top: solid 1px #ccc
+    .card-footer-rakuten-link
+      height: 44px
+      line-height: 44px
+      text-align: center
+      color: #9e9e9e
+      transition: background .2s ease-out, color .2s ease-out
+      &:hover
+        color: #fff
+        background-color: rgb(191, 0, 0)
+
+.pagination-container
+  text-align: center
+  padding: 24px 0
+
+.pagination
+  display: inline-block
+  .pagination-item
+    display: inline-block
+    min-width: 44px
+    height: 44px
+    line-height: 44px
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3)
+    background-color: #fff
+    cursor: pointer
+    transition: box-shadow .1s ease-out, opacity .2s ease-out
+    &:hover
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .3)
+    & + .pagination-item
+      margin-left: 12px
+    &.pagination-item__disbaled
+      opacity: .3
+
+.app-footer
+  padding: 0 24px
+  color: #9e9e9e
