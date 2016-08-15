@@ -1,0 +1,17 @@
+doctype html
+html(lang="ja")
+  head
+    title なんか
+    meta(charset = "utf-8")
+    link(rel="stylesheet" href="./index.css")
+  body
+    .app-container
+      .main-visual
+        h1 なんか
+      .cards-container
+        ul.cards
+          - for (let index = 0; index < 30; index++) {
+            li.card
+              .card-header 商品名#{index}
+              .card-content
+          - }

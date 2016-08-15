@@ -1,0 +1,20 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:html": "jade src/index.jade -o dist",
+    "build:css": "node-sass src/index.sass -o dist",
+    "build": "npm run build:html & npm run build:css",
+    "watch:html": "jade -w src/index.jade -o dist",
+    "watch:css": "node-sass -w src/index.sass -o dist",
+    "watch": "npm run watch:html & npm run watch:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "node-sass": "^3.8.0"
+  }
+}
