@@ -1,0 +1,37 @@
+doctype html
+html(lang="ja")
+  head
+    title なんか
+    meta(charset = "utf-8")
+    link(rel="stylesheet" href="./index.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+  body
+    .app-container
+      .app-navigation
+        ul
+          li
+            a(href="/") トップ
+          li
+            a(href="/shops")店舗一覧
+          li
+            a(href="/genres")ジャンル一覧
+      .app-header
+        .main-visual
+          .main-visual-image-container
+            img(src="/images/main_visual.jpg")
+          .main-visual-text-box
+            h1 酒蔵 山口
+            p すばらしき日本酒の旅を
+      .app-content
+        ul.genre-list
+          - for (let index = 0; index < 10; index++) {
+            li
+              a(href="/") ジャンル#{index}
+              ul.genre-list
+                - for (let subIndex = 0; subIndex < 10; subIndex++) {
+                  li
+                    a(href="/") ジャンル#{index} - 小ジャンル#{subIndex}
+                - }
+          - }
+      .app-footer
+        p 【免責事項】本サイトで掲載されている情報は、本サイト作成者により運営されています。 価格、販売可能情報は、変更される場合があります。購入時に楽天市場店舗（www.rakuten.co.jp）に表示されている価格が、その商品の販売に適用されます。
