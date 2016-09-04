@@ -12,15 +12,20 @@ html(lang="ja")
           li
             a(href="/") トップ
           li
-            a(href="/shops")店舗一覧
+            a(href="/shops") 店舗一覧
           li
-            a(href="/genres")ジャンル一覧
+            a(href="/genres") ジャンル一覧
       .app-content
         .product-card-container
           .product-card
             .product-card-header
               img(src="http://getnavi.jp/wps/wp-content/uploads/2016/05/20160515-%EF%BD%936-0.jpg")
             .product-card-content
+              ul.breadcrumb-list
+                - for (let index = 0; index < 2; index++) {
+                  li
+                    a(href="/") パンくず階層#{index}
+                - }
               .product-card-content-product-name 商品名
               .product-card-content-product-description
                 | 商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。商品説明。
